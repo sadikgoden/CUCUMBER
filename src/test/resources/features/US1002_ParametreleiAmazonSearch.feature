@@ -13,11 +13,3 @@ Feature: US1002 Kullanici parametre olarak yazdigi urunu amazonda aratir
     And  arama sonuclarinin "apple" icerdigini test eder
     Then 5 saniye bekler
     And sayfayi kapatir
-
-
-  git init
-  git add .
-  git commit -m "cucumber"
-  git branch -M main
-  git remote add origin https://github.com/sadikgoden/CUCUMBER.git
-  git push -u origin main
