@@ -7,6 +7,8 @@ public class QualitydemyPage {
     public QualitydemyPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    @FindBy(xpath="//a[normalize-space()='Accept']")
+    public WebElement cooki ;
     @FindBy(linkText = "Log in")
     public WebElement ilkLoginLinki;
     @FindBy(id = "login-email")
