@@ -44,6 +44,8 @@ public class AmazonStepdefinition {
         String actualAramaSonucu =amazonPage.sonucYaziElementi.getText();
         Assert.assertTrue(actualAramaSonucu.contains(expectedIcerik));
     }
+
+
     @Given("kullanici {string} anasayfaya gider")
     public void kullanici_anasayfaya_gider(String istenenUrl) {
         Driver.getDriver().get(ConfigReader.getProperty(istenenUrl));
@@ -68,4 +70,17 @@ public class AmazonStepdefinition {
             throw new RuntimeException(e);
         }
     }
+
+    @Then("ilk urunu tiklar")
+    public void ilkUrunuTiklar() {
+        amazonPage.ilkUrunElementi.click();
+    }
+
+    @And("urun isminin {string} icerdigini test eder")
+    public void urunIsmininIcerdiginiTestEder(String arananUrun) {
+        String actuaIlkUrunElementi= amazonPage.ilkUrunIsimElementi.getText();
+        Assert.assertTrue(actuaIlkUrunElementi.contains(arananUrun));
+    }
+
+
 }
