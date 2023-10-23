@@ -1,4 +1,5 @@
 package stepDefinitions;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import pages.QualitydemyPage;
@@ -41,5 +42,14 @@ public class QualitydemyStepdefinitions {
         Assert.assertTrue(qualitydemyPage.emailKutusu.isDisplayed());
     }
 
+    @And("username kutusuna examples'den {string} yazar")
+    public void usernameKutusunaExamplesDenYazar(String kullaniciEmail) {
+        qualitydemyPage.emailKutusu.sendKeys(kullaniciEmail);
+    }
 
+    @And("password kutusuna examples'den {string} yazar")
+    public void passwordKutusunaExamplesDenYazar(String password) {
+        qualitydemyPage.passwordKutusu.sendKeys(password);
+    }
 }
+
